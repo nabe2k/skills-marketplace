@@ -42,4 +42,13 @@ model: haiku
    - `Bash` でカレントディレクトリを確認: `pwd`
    - `Bash` で `.claude-session` ディレクトリを作成: `mkdir -p <cwd>/.claude-session`
    - `Write` ツールで `<cwd>/.claude-session/作業メモ_<timestamp>.md` に書き込む（絶対パスを使用）
-3. 保存完了をユーザーに伝え、ファイルパスを表示する
+3. Agent失敗時（モデルアクセスエラー・書き込み失敗など）はフォールバック手順を実行する:
+   - `Bash` で現在時刻を取得: `date +%Y-%m-%d_%H-%M-%S`
+   - `Bash` でカレントディレクトリを確認: `pwd`
+   - `Bash` で `.claude-session` ディレクトリを作成: `mkdir -p <cwd>/.claude-session`
+   - `Write` ツールで直接 `<cwd>/.claude-session/作業メモ_<timestamp>.md` に書き込む
+   - フォールバック実行をユーザーに通知する: 「Agentサブタスク失敗のため直接書き込みで保存しました」
+4. フォールバックも失敗した場合はユーザーにエラーを報告する:
+   - エラー内容（ディスク容量不足・パス解決失敗など）を明示する
+   - 手動保存の代替案を提示する: 「以下の内容をコピーして手動で保存してください」とMarkdown内容を表示する
+5. 保存完了をユーザーに伝え、ファイルパスを表示する
