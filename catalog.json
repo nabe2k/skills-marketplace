@@ -1,12 +1,12 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updated": "2026-04-19",
   "skills": [
     {
-      "name": "save-work",
-      "path": "skills/save-work/skills/save-work/SKILL.md",
-      "description": "/clearの前に作業内容をMarkdownファイルに保存する",
-      "triggers": ["作業を保存", "save work", "clearの前に保存", "セッションを保存"],
+      "name": "session-memo",
+      "path": "skills/session-memo/skills/session-memo/SKILL.md",
+      "description": "セッションの作業メモをMarkdownファイルに保存する",
+      "triggers": ["セッションメモ", "session memo", "作業を保存", "save work", "clearの前に保存", "セッションを保存"],
       "tags": ["session", "productivity"]
     },
     {

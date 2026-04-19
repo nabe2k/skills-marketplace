@@ -6,7 +6,7 @@ Claude Code カスタムスキルのマーケットプレイス。
 
 | スキル名 | 説明 | タグ |
 |----------|------|------|
-| [save-work](skills/save-work/skills/save-work/SKILL.md) | /clearの前に作業内容をMarkdownに保存 | session, productivity |
+| [session-memo](skills/session-memo/skills/session-memo/SKILL.md) | セッションの作業メモをMarkdownに保存 | session, productivity |
 | [save-tokens](skills/save-tokens/skills/save-tokens/SKILL.md) | 省トークンモードを有効化してコストを削減 | cost, productivity |
 
 ## インストール方法
@@ -20,7 +20,7 @@ Claude Code のプラグインシステムを使用する：
 /plugin marketplace add nabe2k/skills-marketplace
 
 # スキルを個別にインストール
-/plugin install save-work@skills-marketplace
+/plugin install session-memo@skills-marketplace
 /plugin install save-tokens@skills-marketplace
 ```
 
@@ -53,6 +53,32 @@ model: haiku          # 省略時は現在のモデルを使用
 ---
 
 （スキルの本文）
+```
+
+## マイグレーションガイド
+
+### v2.0.0: `save-work` → `session-memo` (破壊的変更)
+
+`save-work` スキルは `session-memo` に改名されました。
+
+**移行手順:**
+
+```bash
+# 旧スキルをアンインストール
+/plugin uninstall save-work@skills-marketplace
+
+# 新スキルをインストール
+/plugin install session-memo@skills-marketplace
+```
+
+手動インストールの場合:
+```bash
+# 旧ディレクトリを削除
+rm -rf ~/.claude/skills/save-work
+
+# 新スキルを配置
+mkdir -p ~/.claude/skills/session-memo
+cp skills/session-memo/skills/session-memo/SKILL.md ~/.claude/skills/session-memo/SKILL.md
 ```
 
 ## 新規スキルの追加
