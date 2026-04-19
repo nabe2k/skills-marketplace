@@ -55,6 +55,32 @@ model: haiku          # 省略時は現在のモデルを使用
 （スキルの本文）
 ```
 
+## マイグレーションガイド
+
+### v2.0.0: `save-work` → `session-memo` (破壊的変更)
+
+`save-work` スキルは `session-memo` に改名されました。
+
+**移行手順:**
+
+```bash
+# 旧スキルをアンインストール
+/plugin uninstall save-work@skills-marketplace
+
+# 新スキルをインストール
+/plugin install session-memo@skills-marketplace
+```
+
+手動インストールの場合:
+```bash
+# 旧ディレクトリを削除
+rm -rf ~/.claude/skills/save-work
+
+# 新スキルを配置
+mkdir -p ~/.claude/skills/session-memo
+cp skills/session-memo/skills/session-memo/SKILL.md ~/.claude/skills/session-memo/SKILL.md
+```
+
 ## 新規スキルの追加
 
 1. `skills/<skill-name>/skills/<skill-name>/SKILL.md` を作成
