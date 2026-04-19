@@ -6,20 +6,39 @@ Claude Code カスタムスキルのマーケットプレイス。
 
 | スキル名 | 説明 | タグ |
 |----------|------|------|
-| [save-work](skills/save-work/SKILL.md) | /clearの前に作業内容をMarkdownに保存 | session, productivity |
-| [save-tokens](skills/save-tokens/SKILL.md) | 省トークンモードを有効化してコストを削減 | cost, productivity |
+| [save-work](skills/save-work/skills/save-work/SKILL.md) | /clearの前に作業内容をMarkdownに保存 | session, productivity |
+| [save-tokens](skills/save-tokens/skills/save-tokens/SKILL.md) | 省トークンモードを有効化してコストを削減 | cost, productivity |
 
 ## インストール方法
 
-スキルをローカルの Claude Code 環境に追加する手順：
+### プラグインとしてインストール（推奨）
+
+Claude Code のプラグインシステムを使用する：
+
+```
+# マーケットプレイスを追加（初回のみ）
+/plugin marketplace add nabe2k/skills-marketplace
+
+# スキルを個別にインストール
+/plugin install save-work@skills-marketplace
+/plugin install save-tokens@skills-marketplace
+```
+
+### 手動インストール
+
+スキルファイルを直接配置する場合：
 
 ```bash
-# スキルディレクトリに配置
-cp skills/<skill-name>/SKILL.md ~/.claude/skills/<skill-name>/SKILL.md
+# グローバル（全プロジェクト共通）
+mkdir -p ~/.claude/skills/<skill-name>
+cp skills/<skill-name>/skills/<skill-name>/SKILL.md ~/.claude/skills/<skill-name>/SKILL.md
 
-# skill-registry.json の skill_dirs に以下が含まれていることを確認
-# ~/.claude/skills
+# プロジェクトローカル（特定プロジェクト専用）
+mkdir -p <project-root>/.claude/skills/<skill-name>
+cp skills/<skill-name>/skills/<skill-name>/SKILL.md <project-root>/.claude/skills/<skill-name>/SKILL.md
 ```
+
+配置するだけで Claude Code が自動検出し、`/<skill-name>` コマンドとして利用可能になる。
 
 ## スキルの構造
 
@@ -38,6 +57,8 @@ model: haiku          # 省略時は現在のモデルを使用
 
 ## 新規スキルの追加
 
-1. `skills/<skill-name>/SKILL.md` を作成
-2. `catalog.json` にエントリを追加
-3. Pull Request を送る
+1. `skills/<skill-name>/skills/<skill-name>/SKILL.md` を作成
+2. `skills/<skill-name>/.claude-plugin/plugin.json` を作成
+3. `.claude-plugin/marketplace.json` の `plugins` 配列にエントリを追加
+4. `catalog.json` にエントリを追加
+5. Pull Request を送る

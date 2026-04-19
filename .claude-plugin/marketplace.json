@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skills-marketplace",
+  "description": "Claude Code カスタムスキルのマーケットプレイス",
+  "owner": {
+    "name": "nabe2k"
+  },
+  "plugins": [
+    {
+      "name": "save-work",
+      "description": "/clearの前に作業内容をMarkdownファイルに保存する",
+      "source": "./skills/save-work"
+    },
+    {
+      "name": "save-tokens",
+      "description": "セッションのトークン消費を半減させる省トークンモードを有効化する",
+      "source": "./skills/save-tokens"
+    }
+  ]
+}

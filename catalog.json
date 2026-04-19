@@ -4,14 +4,14 @@
   "skills": [
     {
       "name": "save-work",
-      "path": "skills/save-work/SKILL.md",
+      "path": "skills/save-work/skills/save-work/SKILL.md",
       "description": "/clearの前に作業内容をMarkdownファイルに保存する",
       "triggers": ["作業を保存", "save work", "clearの前に保存", "セッションを保存"],
       "tags": ["session", "productivity"]
     },
     {
       "name": "save-tokens",
-      "path": "skills/save-tokens/SKILL.md",
+      "path": "skills/save-tokens/skills/save-tokens/SKILL.md",
       "description": "セッションのトークン消費を半減させる省トークンモードを有効化する",
       "triggers": ["トークン節約", "save tokens", "省トークン"],
       "tags": ["cost", "productivity"]

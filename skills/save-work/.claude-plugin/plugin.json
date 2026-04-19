@@ -1,0 +1,4 @@
+{
+  "name": "save-work",
+  "description": "/clearの前に作業内容をMarkdownファイルに保存する"
+}
