@@ -7,9 +7,9 @@
   },
   "plugins": [
     {
-      "name": "save-work",
-      "description": "/clearの前に作業内容をMarkdownファイルに保存する",
-      "source": "./skills/save-work"
+      "name": "session-memo",
+      "description": "セッションの作業メモをMarkdownファイルに保存する",
+      "source": "./skills/session-memo"
     },
     {
       "name": "save-tokens",

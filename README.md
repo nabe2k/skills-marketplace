@@ -6,7 +6,7 @@ Claude Code カスタムスキルのマーケットプレイス。
 
 | スキル名 | 説明 | タグ |
 |----------|------|------|
-| [save-work](skills/save-work/skills/save-work/SKILL.md) | /clearの前に作業内容をMarkdownに保存 | session, productivity |
+| [session-memo](skills/session-memo/skills/session-memo/SKILL.md) | セッションの作業メモをMarkdownに保存 | session, productivity |
 | [save-tokens](skills/save-tokens/skills/save-tokens/SKILL.md) | 省トークンモードを有効化してコストを削減 | cost, productivity |
 
 ## インストール方法
@@ -20,7 +20,7 @@ Claude Code のプラグインシステムを使用する：
 /plugin marketplace add nabe2k/skills-marketplace
 
 # スキルを個別にインストール
-/plugin install save-work@skills-marketplace
+/plugin install session-memo@skills-marketplace
 /plugin install save-tokens@skills-marketplace
 ```
 

@@ -1,6 +1,6 @@
 ---
-name: save-work
-description: /clearの前に作業内容を保存したいとき、「作業を保存」「save work」「clearの前に保存」「セッションを保存」と言ったときに使用する。現在の会話の作業内容をMarkdownファイルに保存する。
+name: session-memo
+description: セッションの作業メモを保存したいとき、「セッションメモ」「session memo」「作業を保存」「save work」「clearの前に保存」「セッションを保存」と言ったときに使用する。現在の会話の作業内容をMarkdownファイルに保存する。
 allowed-tools: Agent, Bash, Write
 model: haiku
 ---
